@@ -7,7 +7,7 @@ FROM frolvlad/alpine-glibc:latest
 
 ENV PATH /usr/local/texlive/2021/bin/x86_64-linuxmusl:$PATH
 
-RUN apk add --no-cache curl perl fontconfig-dev freetype-dev && \
+RUN apk add --no-cache curl perl fontconfig-dev freetype-dev ghostscript && \
     apk add --no-cache --virtual .fetch-deps xz tar wget
 WORKDIR /tmp/install-tl-unx
 COPY texlive.profile ./
